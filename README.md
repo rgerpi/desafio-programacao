@@ -1,5 +1,5 @@
 # Desafio de programação 1
-A idéia deste desafio é nos permitir avaliar melhor as habilidades de candidatos à vagas de programador, de vários níveis.
+A idéia deste desafio é nos permitir avaliar melhor as habilidades de candidatos, de vários níveis, à vagas de programador.
 
 Este desafio deve ser feito por você em sua casa. Gaste o tempo que você quiser, porém normalmente você não deve precisar de mais do que algumas horas.
 
@@ -16,15 +16,18 @@ Este desafio deve ser feito por você em sua casa. Gaste o tempo que você quise
 ## Descrição do projeto
 Você recebeu um arquivo de texto com os dados de vendas da empresa. Precisamos criar uma maneira para que estes dados sejam importados para um banco de dados.
 
-Sua tarefa é criar uma interface web que aceite upload de arquivos, normalize os dados e armazene-os em um banco de dados relacional.
+Sua tarefa é criar uma interface Web que permita você fazer upload desse arquivo e acompanhar o status de importacao. Ao final, deve ser possível exportar a planilha normalizada do banco de dados. O processo de importacao deve ser assícrono, deve normalizar, gravar em uma base de dados relacional e deve mostrar em tela, em caso de erro, a linha e a mensagem de erro em que ocorreram.
 
 Sua aplicação web DEVE:
 
 1. Aceitar (via um formulário) o upload de arquivos separados por TAB com as seguintes colunas: purchaser name, item description, item price, purchase count, merchant address, merchant name. Você pode assumir que as colunas estarão sempre nesta ordem, que sempre haverá dados em cada coluna, e que sempre haverá uma linha de cabeçalho. Um arquivo de exemplo chamado example_input.tab está incluído neste repositório.
-1. Interpretar ("parsear") o arquivo recebido, normalizar os dados, e salvar corretamente a informação em um banco de dados relacional.
-1. Exibir a receita bruta total representada pelo arquivo enviado após o upload + parser.
+1. Ao aceitar o arquivo deve fazer uma inspeção para verificar se o arquivo não esta vazio ou não está com a coluna ou ordem incorretas.
+1. De modo assícrono, interpretar ("parsear") o arquivo recebido, normalizar os dados, e salvar corretamente a informação em um banco de dados relacional.
+1. Após a conclusão do processo, exibir a receita bruta total representada pelo arquivo enviado após o upload + parser.
 1. Ser escrita obrigatoriamente em Java com Spring Boot (ou outra linguagem especificada para a vaga se for o caso).
-1. Ser simples de configurar e rodar, funcionando em ambiente compatível com Unix (Linux ou Mac OS X). Ela deve utilizar apenas linguagens e bibliotecas livres ou gratuitas.
+1. Pode usar sistemas de mensageria (Kafka, RabbitMQ...) caso faça sentido.
+1. Pode usar arquitetura hexagonal caso faça sentido
+1. Obrigatoriamente, usar docker-compose para executar o projeto (tanto API como o banco de dados relacional ou qualquer outro artefato que venha compor o projeto).
 
 Sua aplicação web não precisa:
 
